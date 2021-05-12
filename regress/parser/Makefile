@@ -10,14 +10,14 @@ CLEANFILES=	${IKEOBJS}
 
 LDADD+=		-lutil -lcrypto ${IKEOBJS}
 DPADD+=		${LIBUTIL} ${LIBCRYPTO}
-CFLAGS+=	-I${.CURDIR}/../../../../sbin/iked
+CFLAGS+=	-I${.CURDIR}/../../iked
 CFLAGS+=	-Wno-missing-field-initializers
 
 test_parser: ${IKEOBJS}
 
 ${IKEOBJS}:
-	cd ${.CURDIR}/../../../../sbin/iked && make $@
-	ln -sf ${.OBJDIR}/../../../../sbin/iked/$@ .
+	cd ${.CURDIR}/../../iked && make $@
+	ln -sf ${.OBJDIR}/../../iked/$@ .
 
 LDADD+=		-L${.OBJDIR} -ltest_helper
 DPADD+=		libtest_helper.a

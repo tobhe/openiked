@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.7 2016/09/11 14:31:02 natano Exp $
 
-.PATH:		${.CURDIR}/../../sbin/iked
+.PATH:		${.CURDIR}/../iked
 
 PROG=		ikectl
 SRCS=		log.c ikeca.c ikectl.c parser.c util.c
@@ -9,7 +9,7 @@ MAN=		ikectl.8
 
 LDADD=		-lutil -lcrypto
 DPADD=		${LIBUTIL} ${LIBCRYPTO}
-CFLAGS+=	-Wall -I${.CURDIR} -I${.CURDIR}/../../sbin/iked
+CFLAGS+=	-Wall -I${.CURDIR} -I${.CURDIR}/../iked
 CFLAGS+=	-Wstrict-prototypes -Wmissing-prototypes
 CFLAGS+=	-Wmissing-declarations
 CFLAGS+=	-Wshadow -Wpointer-arith -Wcast-qual
